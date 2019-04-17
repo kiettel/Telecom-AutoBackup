@@ -63,7 +63,7 @@ o GPON ZTEC320
 
 o GPON Alcatel
 
-o GPONHuaweiMA5608T
+o GPON HuaweiMA5608T
 
 o Huawei NE40E-X
 

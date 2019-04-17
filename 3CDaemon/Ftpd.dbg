@@ -1,0 +1,175 @@
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP Server session started
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: USER anonymous
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 USER anonymous
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 331 User name ok, need password
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 331 User name ok, need password
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Login attempt by: anonymous
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: PASS IEUser@
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 PASS IEUser@
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 230 User logged in
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 230 User logged in
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Login successful
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: opts utf8 on
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 opts utf8 on
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 202 Command opts utf8 on not implemented
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 202 Command opts utf8 on not implemented
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: syst
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 syst
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 215 UNIX Type: L8
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 215 UNIX Type: L8
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: site help
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 site help
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 202 Command site help not implemented
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 202 Command site help not implemented
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: PWD
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 PWD
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 257 "/" is current directory
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 257 "/" is current directory
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: noop
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 noop
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 200 Command OK
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 200 Command OK
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: CWD /
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 CWD /
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 250 CWD command successful
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 250 CWD command successful
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: TYPE A
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 TYPE A
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 200 Type set to A.
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 200 Type set to A.
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: PASV
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 PASV
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 227 Entering passive mode (200,120,52,183,4,162)
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 227 Entering passive mode (200,120,52,183,4,162)
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Command Received: LIST
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 LIST
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 125 Using existing data connection
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 125 Using existing data connection
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 226 Closing data connection
+Oct 02, 2006 22:52:16 Session 3, Peer 200.120.52.183 FTP: Thread 320 Status: 226 Closing data connection
+Oct 02, 2006 22:52:27 Session 4, Peer 201.239.31.221 FTP Server session started
+Oct 02, 2006 22:52:27 Session 4, Peer 201.239.31.221 FTP: Thread 416 Command Received: USER harry.superman
+Oct 02, 2006 22:52:27 Session 4, Peer 201.239.31.221 USER harry.superman
+Oct 02, 2006 22:52:27 Session 4, Peer 201.239.31.221 331 User name ok, need password
+Oct 02, 2006 22:52:27 Session 4, Peer 201.239.31.221 FTP: Thread 416 Status: 331 User name ok, need password
+Oct 02, 2006 22:52:27 Session 4, Peer 201.239.31.221 FTP: Login attempt by: harry.superman
+Oct 02, 2006 22:52:33 Session 4, Peer 201.239.31.221 FTP: Thread 416 Command Received: PASS superman
+Oct 02, 2006 22:52:33 Session 4, Peer 201.239.31.221 PASS XXXXXXX
+Oct 02, 2006 22:52:33 Session 4, Peer 201.239.31.221 530 Login access denied
+Oct 02, 2006 22:52:33 Session 4, Peer 201.239.31.221 FTP: Thread 416 Status: 530 Login access denied
+Oct 02, 2006 22:52:33 Session 4, Peer 201.239.31.221 FTP: User harry.supermanattempted access. User profile denied access
+Oct 02, 2006 22:52:35 Session 4, Peer 201.239.31.221 FTP: Connection closed.
+Oct 02, 2006 22:52:35 Session 4, Peer 201.239.31.221 Session closed by peer
+Oct 02, 2006 22:52:43 Session 5, Peer 201.239.31.221 FTP Server session started
+Oct 02, 2006 22:52:43 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: USER harry
+Oct 02, 2006 22:52:43 Session 5, Peer 201.239.31.221 USER harry
+Oct 02, 2006 22:52:43 Session 5, Peer 201.239.31.221 331 User name ok, need password
+Oct 02, 2006 22:52:43 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 331 User name ok, need password
+Oct 02, 2006 22:52:43 Session 5, Peer 201.239.31.221 FTP: Login attempt by: harry
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASS superman
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 PASS XXXXXXX
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 230 User logged in
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 230 User logged in
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Login successful
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: SYST
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 SYST
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 215 UNIX Type: L8
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 215 UNIX Type: L8
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PWD
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 PWD
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 257 "/" is current directory
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 257 "/" is current directory
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: TYPE I
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 TYPE I
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 200 Type set to I.
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 200 Type set to I.
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASV
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 PASV
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 227 Entering passive mode (200,120,52,183,4,164)
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 227 Entering passive mode (200,120,52,183,4,164)
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: SIZE /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 SIZE /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 213 Error accessing file
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 213 Error accessing file
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: MDTM /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 MDTM /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 213 File status unavailable
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 213 File status unavailable
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: RETR /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 RETR /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 550 File unavailable
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 550 File unavailable
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASV
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 PASV
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 227 Entering passive mode (200,120,52,183,4,165)
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 227 Entering passive mode (200,120,52,183,4,165)
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: CWD /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 CWD /
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 250 CWD command successful
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 250 CWD command successful
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: LIST
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 LIST
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 125 Using existing data connection
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 125 Using existing data connection
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 226 Closing data connection
+Oct 02, 2006 22:52:50 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 226 Closing data connection
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASV
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 PASV
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 227 Entering passive mode (200,120,52,183,4,166)
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 227 Entering passive mode (200,120,52,183,4,166)
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: SIZE /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 SIZE /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 213 0
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 213 0
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: MDTM /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 MDTM /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 213 20061003011236
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 213 20061003011236
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: RETR /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 RETR /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 550 File unavailable
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 550 File unavailable
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASV
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 PASV
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 227 Entering passive mode (200,120,52,183,4,167)
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 227 Entering passive mode (200,120,52,183,4,167)
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: CWD /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 CWD /3CDaemon
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 250 CWD command successful
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 250 CWD command successful
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: LIST
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 LIST
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 125 Using existing data connection
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 125 Using existing data connection
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 226 Closing data connection
+Oct 02, 2006 22:53:13 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 226 Closing data connection
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASV
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 PASV
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 227 Entering passive mode (200,120,52,183,4,168)
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 227 Entering passive mode (200,120,52,183,4,168)
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: SIZE /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 SIZE /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 213 0
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 213 0
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: MDTM /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 MDTM /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 213 20061003011236
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 213 20061003011236
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: RETR /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 RETR /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 550 File unavailable
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 550 File unavailable
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: PASV
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 PASV
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 227 Entering passive mode (200,120,52,183,4,169)
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 227 Entering passive mode (200,120,52,183,4,169)
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: CWD /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 CWD /Cisco TFTP Server
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 250 CWD command successful
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 250 CWD command successful
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Command Received: LIST
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 LIST
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 125 Using existing data connection
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 125 Using existing data connection
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 226 Closing data connection
+Oct 02, 2006 22:54:53 Session 5, Peer 201.239.31.221 FTP: Thread 380 Status: 226 Closing data connection

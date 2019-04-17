@@ -1,0 +1,1 @@
+jre\bin\java -jar AutoBackup.jar com.kiettel.autobackup.Main

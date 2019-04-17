@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<title>Tftp Server</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+<meta name="Microsoft Border" content="none"></head>
+
+<body bgcolor="#000000" text="#FFFFFF">
+
+<p>The TFTP Server in 3CDaemon offers the following features: 
+
+<ul>
+  <li>RFC 1350 compliant TFTP Services</li>
+  <li>Support for ASCII and Binary transfers</li>
+  <li>RFC 1782 - TFTP Option extension</li>
+  <li>RFC 1783 - BlockSize Negotiation</li>
+  <li>RFC 1784 - Timeout Interval and Transfer Size negotiation</li>
+  <li>User configurable timeouts and retries</li>
+  <li>Automatic directory creation (configurable)</li>
+  <li>Logging and debugging</li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp; RFC 1782, 1783 and 1784 are automatically implemented in the server,
+and require no user configuration. If the client asks for the option, and the server can
+provide it, it will be provided.</p>
+
+<p>Here is the configuration screen, and what each value means:</p>
+
+<p><img src="images/tftpcfg.jpg" alt="tftpcfg.jpg (23895 bytes)" WIDTH="644" HEIGHT="511"></p>
+
+<table border="2" width="100%" cellpadding="2">
+  <tr>
+    <td width="47%" valign="top"><small>Create directory names in incoming file requests?</small></td>
+    <td width="53%"><small>If set, this will allow requests from TFTP clients which contain
+    embedded directory names, to have those directories automatically created. For example,
+    your Upload Directory is set as C:\TEMP\. The Client requests to send the file
+    &quot;/foobar/foobar.bin&quot;. The file which will be created is
+    C:\TEMP\foobar\foobar.bin, <em>even if c:\temp\foobar\ does not exist</em>. It will be
+    created.</small></td>
+  </tr>
+  <tr>
+    <td width="47%" valign="top"><small>Allow overwrite of existing files?</small></td>
+    <td width="53%"><small>If a client does a Write Request, and the file already exists on
+    the server, will it be overwritten? If this option is checked, the file is allowed to be
+    overwritten. If it is not checked, the client will get an &quot;Access Denied&quot;
+    message. If the file exists, but is marked &quot;read-only&quot; on the server, <em>even
+    if this option is checked</em>, the client will get an &quot;Error accessing file&quot;
+    message, and the file will not be overwritten.</small></td>
+  </tr>
+  <tr>
+    <td width="47%" valign="top"><small>Upload/Download directory:</small></td>
+    <td width="53%"><small>This is the directory from which the TFTP Server will serve files.
+    Either type in a directory name, or press the &quot;...&quot; button and pick a directory
+    from the pop-up list.</small></td>
+  </tr>
+  <tr>
+    <td width="47%" valign="top"><small>Per-Packet Timeout in seconds:</small></td>
+    <td width="53%"><small>This will determine how long the TFTP Server will wait for an
+    acknowledgement of a packet before it retransmits the packet. In general, the default of 5
+    should be sufficient. You may want to put it higher if you have slow links, or a slow TFTP
+    Client. If the client does RFC 1784 TimeOut negotiation, the timeout proposed by the
+    client will be accepted, and will override this value.</small></td>
+  </tr>
+  <tr>
+    <td width="47%" valign="top"><small>Maximum Retries:</small></td>
+    <td width="53%"><small>The number of times that an unacknowledged packet will be
+    retransmitted before the TFTP Server considers the transfer as &quot;failed&quot;. The
+    default value of 10 should be sufficient for most applications.</small></td>
+  </tr>
+  <tr>
+    <td width="47%" valign="top"><small>Interframe Transmission Gap:</small></td>
+    <td width="53%"><small>Causes an X millisecond gap to be inserted between frames
+    transmitted by the server. Shouldn't ever really be required; Just something I was fooling
+    around with. Leave this set to 0 (default). Trust me....</small></td>
+  </tr>
+</table>
+</body>
+</html>

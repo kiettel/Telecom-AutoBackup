@@ -1,0 +1,178 @@
+Rev 1:	Added support for TFTP a file > 16MB
+
+Rev 2:	Fixed bug in FTP configuration, where setting of "Delete files"
+	was not saved. Also, made change so that the file name currently
+	being transferred appears on the view list for the duration
+	of the file transfer.
+
+Rev 3:	When the program starts, it scans all logical drives. This can be
+	slow on some PCs, especially when scanning drive :.Removed
+	reference to GetLogicalDrivesString() (Microsoft function call) that
+	was causing the delay. If I need the drive letters, I'll write my
+	own function at the appropriate time.
+
+Rev 4:	Two changes:
+	1) The format of the TFTP RRQ is supposed to be:
+		filename NULL mode NULL
+	Some TFTP clients (e.g. CB3500) will have several trailing NULLs after
+	the MODE parameter. This causes 3CDaemon to think that there may be
+	TFTP options attached, even though there aren't. Now, if the TFTP
+	RRQ is too long, ensure that there are valid TFTP options, not just
+ 	trailing garbage.
+	2) Some people objected to having to supply a password for the
+	anonymous user. 3CDaemon will now allow an anonymous user to login
+	without a password. Following the convention of other FTP servers,
+	you will get a snotty message that complains about the fact that
+	there is no password, but you will be let in anyway.
+
+Rev 5:	Some FTP client programs put an erroneous space in between the Make
+	Directory command and the directory name. (RFC says there should be one
+	space, they put two.) This causes directories to be created with a leading 
+	space. Instead, parse out all leading and trailing spaces from DIR name.
+	(I'll probably get some grief from folks who *want* directory names with
+	a leading space, but this is the lesser of two evils)
+
+	Fix: TFTP CLient would hang if the TFTP server was not responding to the 
+	initial RRQ/WRQ. Now, it will timeout after 5 retries.
+
+	Hacker Options: I get a lot of requests for different types of enhancements
+	to the functionality of 3CDaemon. I like to honor those requests if I can,
+	but they create a problem: The more configuration options you provide, the
+	harder it is for the average non-technical user to setup and use. This goes
+	against the original philosophy of 3CDaemon, which was to make it as "plug-
+	and-play" as possible.
+
+	So, I think (I hope...) I have come up with a solution for this. I have
+	introduced the concept of "Hacker Options", which must be configured manually.
+	This allows technical users to customise 3CDaemon to their liking, while not
+	confusing the avaerage user with a bewildering array of configuration choices.
+	Hacker options will be documented in this file - nowhere else.
+
+	Hacker option added: If you place a text file called "Welcome.3CD" in the same
+	directory as the 3CDaemon executable, the contents of that text file will be
+	displayed when the user initially connects to the FTP server.
+
+	Hacker option added: If you place a file called "README.3CD", in any directory 
+	on your FTP server, that file will be displayed when a user enters the
+	directory. Might be used. e.g., for displaying a list of file descriptions. 
+
+	Hacker Option added: You can set a user defined port for the TFTP server. In
+	order to do so, edit the file "3CDaemon.ini" (should be in the same directory
+	as the 3CDaemon executable). Look for a section heading "[TFTPDaemon]". Add
+	the following line (without the quotes): "TFTPPort = <number>", where <number>
+	is a number between 1 and 65534. NOTE: Spaces are extremely relevant. The
+	syntax is "TFTPPort<SPACE>=<SPACE>number". It is also case-sensitive, so be
+	careful with your typing! If the option is not present,TFTP Server defaults
+	to port 69. The initial screen for TFTP will display the address(es) the
+	TFTP server is listening on, as well as the port number.
+
+	Hacker Option added: What good is a user-definable port for the server, unless
+	the client can use it? In the TFTP Client. where you input the "TFTP Server
+	Address", you may append a ":<port number>" to try to access the server at a 
+	user defined port. For example: 139.87.130.201:801, or tftp.3com.com:187.
+	There should be no spaces between the hostname/ipaddress and the :<port>.
+
+	Hacker Option added: Same as above, except for FTP. Edit "3CDaemon.ini" and
+	look for the section "[FTPDaemon]" (If it is not there, add it...). Add an
+	entry like: "FTPControlPort = <number>" to change the FTP port from the 
+	default of 21. Add an entry like: "FTPDataPort = <number>" to change the
+	FTP Data port from the default of 20.
+
+	Hacker Option added: If you want to rotate your syslog files daily (so that
+	they don't get too large), edit "3CDaemon.ini" and look for the section
+	"[Syslog]". Add an entry like: "RotateLogs = 1". If this option is present,
+	log files will be saved in the format "Month-Day-Year.<logname>.log". The
+	log files don't actually change at the stroke of midnight. Instead, when the
+	first syslog message is received after midnight, the old log files are closed
+	and the new ones are opened.
+
+Rev 6: Some minor bug fixes, and 2 enhancements:
+
+	Hacker option added: Support for FTP virtual directories.
+	Here's how you configure this:
+	When you are configuring the FTP Profile for a user, in the field marked
+	"User Directory" enter the complete path to a filename and enclose it
+	in angle brackets "<>". For example "<C:\Windows\virtual.dir>".
+	You will not be able to use the "Browse" button, so be careful when
+	you are typing!
+
+	This file will be read when the user logs in, in order to determine
+	the virtual directories which should be used. The syntax of the file is
+	as follows:
+
+	# This is a comment. Any lines starting with "#" are ignored.
+	/c = c:\
+	/d = d:\
+	/cdrom = e:\
+	/ProgramFiles = c:\Program Files
+
+	The syntax of the drive mappings is
+	<Virtual directory name><SPACE>=<SPACE><Actual directory>
+	The " = " (including spaces)is very important, because I use that to
+	parse the list.
+
+	NOTES:
+		1) As with all these hacker options, it is the user's responsibility
+		to make sure that the contents of the file are accurate. You could 
+		point "User Directory" to a binary file - it won't work, but you
+		could do it!
+		2) Try to avoid making your virtual directory names substrings of each
+		other, because it cause me headaches when parsing. For example:
+		/d = d:\
+		/default = c:\ // BAD! /d is a substring of /default
+		/d_drive = d:\ // Better, /d_drive is unique!
+
+	Hacker Option added: Disallowed FTP subdirectories or files.
+	In your 3CDaemon install directory (usually c:\Program Files\3Com\3CDaemon\)
+	put a file called "noaccess.ftp". This file should contain a list of files
+	or directories to which the user is not allowed access. When the user tries 
+	to change to one of those directories, or upload or download one of those
+	files, they will receive the message "Access denied!"
+
+Rev 7:
+	Small change: Double-clicking icon in System Tray will now cause the hidden
+	3CDaemon to be shown (rather than showing the "About" window, as it did in
+	previous revisions). Someone pointed out that this was the more intuitive
+	action to perform, and I agree.
+
+	Security precaution: Slowly but surely, I have been adding security features
+	to 3CDaemon. One of the biggest security holes is the ability of a remote
+	user to overwrite one of 3CDaemon's config files, in order to allow themself
+	wider access to the host system. (I warn against making any of 3CDaemon's
+	config directories accessible via TFTP or FTP, but who reads help files?)
+	So, from now on, there will be certain file names (e.g. 3CDaemon.ini) that
+	will be "off-limits" to transfer (either upload or download). This will
+	mess up remote administration for some folks, but I think the added security
+	is worth that loss. So, if you get an "access denied" when you try to do
+	something with one of 3CDaemon's config files, it is intentional.
+
+	Implemented 10 minute inactivity timer. If user doesn't enter a command
+	within 10 minutes of entering the last one, his session is automatically
+	disconnected. The timer is NOT ticking during actual file transfers, but
+	starts fresh as soon as the transfer is complete. For now, I haven't made
+	the timeout interval configurable, but just hardcoded it at 10 minutes.
+	If someone needs it configurable, send me an email, and I will see what I
+	can do.
+
+	Just to avoid false alarms on the inactivity feature: If 3CDaemon disconnects
+	a user due to inactivity, it will send a message to the remote user:
+		221 Service closing control connection. Timeout.
+	This message will also be logged in the ftpd.log file. If you don't see
+	this message, the user was disconnected for some other reason.
+
+Rev 8: Ooops, Syslog "Log by IP Address" didn't actually work. It should now,
+	(I hope....)
+
+Rev 9: Send a "522" response to the net-bsd ftp client when it sends an EPSV 
+	or EPRT command. EPSV and EPRT are FTP extensions defined in RFC 2428.
+	They mostly have to	do with IPv6 compatability. Sending the 522 tells
+	the client that we don't do IPv6, so use the more standard PASV and
+	PORT commands. I suppose at some point I will have to implement RFC
+	2428, but it is too much work at the moment. Wait until more clients
+	start requesting it.
+
+Rev 10: Security thing. Will not display the password for any user (other than
+	anonymous) - either on the screen or in the logs. Instead, you will
+	see "PASS XXXXX". You will still see the password for anonymous. This
+	is intentional.
+

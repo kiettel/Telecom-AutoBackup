@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+<title>Tftp Client</title>
+<meta name="Microsoft Border" content="none"></head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#FF0000" vlink="#FF0000" alink="#FFFFFF">
+
+<p>The TFTP Client in 3CDaemon offers the following features: 
+
+<ul>
+  <li>Support for RFC 1782, 1783 and 1784. Block size, timeout and transfer-size negotiation.</li>
+  <li>Stores addresses of frequently accessed hosts</li>
+  <li>Supports multiple file transfer, or directory transfer</li>
+</ul>
+
+<p>This is the user interface screen for the TFTP Client. The various options are
+described below:</p>
+
+<p><img src="images/tftpclient.jpg" alt="tftpclient.jpg (18362 bytes)" WIDTH="487" HEIGHT="441"></p>
+
+<table border="3" cellpadding="3" cellspacing="3" width="100%">
+  <tr>
+    <td width="40%" valign="top"><small>TFTP Server Address</small></td>
+    <td width="60%"><small>Type in the IP address of the TFTP server with which you wish to
+    exchange files. If you prefer, the TFTP client keeps track of servers it has spoken to in
+    the past. This list can be accessed by selecting the pull-down for this field.</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>Send File/Receive File</small></td>
+    <td width="60%"><small>Self-explanatory. Are you sending or receiving?</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>NetAscii/Octet</small></td>
+    <td width="60%"><small>Are you sending/receiving an ASCII or a binary file? In NetAscii
+    mode, and linefeeds in the file are translated to carriage return/linefeed. In octet mode,
+    the file is sent byte-for-byte, with no translation</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>Remote File Name</small></td>
+    <td width="60%"><small>This is the file name that will be sent to the remote TFTP server
+    in the read/write request. Probably a good idea to use unix-style syntax here (i.e, use
+    &quot;/&quot;, instead of &quot;\&quot;).</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>Local File Name</small></td>
+    <td width="60%"><small>This is the name of the file as it will exist on the local file
+    system (i.e. your PC). You may use the &quot;...&quot; button to browse for a file, if you
+    wish.</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>RFC 1783 Block Size Negotiation</small></td>
+    <td width="60%"><small>If checked, indicates that you want to negotiate the blocksize with
+    the remote server.</small><p><small> Note that the server may not support negotiation, in
+    which case, the default size of 512 is used.</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>Blocksize</small></td>
+    <td width="60%"><small>Enter the size (in bytes) of the blocksize you wish to use.
+    Although 3CDaemon supports block sizes up to 32000 bytes, there may not always be enough
+    available memory to honor such a request. Besides, there is a law of diminishing returns
+    once the block size exceeds a certain size. (i.e. you gain no speed advantage with a 20K
+    block size over a 10K block size). Values between 512-10240 bytes seem to work well</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>RFC 1784 Timeout Negotiation</small></td>
+    <td width="60%"><small>If checked, indicates that you want to negotiate the per-packet
+    timeout with the remote server.</small><p><small> Note that the server may not support
+    negotiation, in which case, the default is to use whatever is configured as per-packet
+    timeout in the <a href="TFTPServer.htm">TFTP Server.</a></small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>Seconds</small></td>
+    <td width="60%"><small>How many seconds before a packet is considered timed-out? Although
+    acceptable values range from 1 to 255 seconds (because the RFC says so....), it doesn't
+    make much sense to set this value higher than 25. If the host hasn't responded in 25
+    seconds, odds are he is not going to respond at all.</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>RFC 1784 Transfer Size Negotiation</small></td>
+    <td width="60%"><small>If checked, indicates that you want to negotiate the TransferSize
+    with the remote server. Inherantly, TFTP does not have a facility to learn the size of
+    remote files. This option adds that ability. Knowing the size of the file in advance
+    allows you to draw &quot;pretty progress bars&quot;. </small><p><small>Note that the
+    server may not support negotiation, in which case, the file is still transferred, but you
+    don't get a progress bar.</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>GO button</small></td>
+    <td width="60%"><small>If all your parameters have been entered correctly, your file will
+    be transferred when you click this button. If the file fails to transfer, look at the
+    &quot;Progress:&quot; field to discover what went wrong.</small></td>
+  </tr>
+  <tr>
+    <td width="40%" valign="top"><small>STOP button</small></td>
+    <td width="60%"><small>Stops a transfer in progress. If you are transferring multiple
+    files, or a whole directory, it will prompt you to stop either the current transfer, or
+    all pending transfers. If you are not currently transferring a file, clicking this button
+    does nothing.</small></td>
+  </tr>
+</table>
+</body>
+</html>

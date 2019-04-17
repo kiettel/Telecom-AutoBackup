@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+<title>FTP Server</title>
+<meta name="Microsoft Border" content="none"></head>
+
+<body bgcolor="#000000" text="#FFFFFF">
+
+<p>The FTP Server in 3CDaemon offers the following features: 
+
+<ul>
+  <li>RFC 765 compliant FTP Services</li>
+  <li>Support for ASCII and Binary transfers</li>
+  <li>Support for passive transfers</li>
+  <li>Per-user configurable rights</li>
+  <li>Logging and debugging</li>
+</ul>
+
+<p>Here is the configuration screen, and what each value means:</p>
+
+<p><img src="images/ftpcfg.jpg" alt="ftpcfg.jpg (29277 bytes)" WIDTH="641" HEIGHT="507"></p>
+
+<table border="2" cellpadding="2" width="100%">
+  <tr>
+    <td width="30%" valign="top"><small>User List</small></td>
+    <td width="70%"><small>The left hand side of the dialog box displays a list of configured
+    users. If you wish to change a user's profile, highlight that user in the list, enter the
+    new information, and select &quot;Save Profile&quot;</small></td>
+  </tr>
+  <tr>
+    <td width="30%" valign="top"><small>Profile Name</small></td>
+    <td width="70%"><small>This is the user's login name, which should be entered at the
+    &quot;Name:&quot; prompt when they wish to login to the server.</small></td>
+  </tr>
+  <tr>
+    <td width="30%" valign="top"><small>Set/Change user password</small></td>
+    <td width="70%"><small>This is where you set the user's password. Since the passwords are
+    saved as an MD5 hash, you cannot recover a users forgotten password (since MD5 hashes are
+    non-reversible). Instead, set a new password for the user.</small><p><small>The user
+    &quot;anonymous&quot; is a special case, and does not require a password.</small></td>
+  </tr>
+  <tr>
+    <td width="30%" valign="top"><small>User Directory</small></td>
+    <td width="70%"><small>This will be the directory that the user sees as his
+    &quot;root&quot; directory once he logs in. The user can access subdirectories of this
+    directory, but cannot access any of the parent directories.</small></td>
+  </tr>
+  <tr>
+    <td width="30%" valign="top"><small>This user can:</small></td>
+    <td width="70%"><small>This is a checklist of the user's rights. Available rights include:</small><ul>
+      <li><small>Login</small></li>
+      <li><small>Download</small></li>
+      <li><small>Upload</small></li>
+      <li><small>Delete Files</small></li>
+      <li><small>Overwrite Files</small></li>
+      <li><small>Rename Files</small></li>
+      <li><small>Make Directories</small></li>
+      <li><small>Delete Directories<br>
+        </small></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%" valign="top"><small>Save Profile</small></td>
+    <td width="70%"><small>This writes the user's profile to the configuration file. Since the
+    config file is read dynamically each time a user logs in, you do <em><strong>NOT</strong></em>
+    have to restart 3CDaemon for the changes to take effect.</small></td>
+  </tr>
+  <tr>
+    <td width="30%" valign="top"><small>Delete Profile</small></td>
+    <td width="70%"><small>This will remove a user from the list of configured users. This
+    user will no longer be allowed to login to the server. Since the config file is read
+    dynamically each time a user logs in, you do <em><strong>NOT</strong></em> have to restart
+    3CDaemon for the changes to take effect.</small><p><small>Note that &quot;anonymous&quot;
+    is a special case, and cannot be removed. If you wish to disallow anonymous access, remove
+    &quot;Login&quot; from anonymous' rights. </small></td>
+  </tr>
+</table>
+</body>
+</html>

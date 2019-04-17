@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="Microsoft Border" content="none">
+<title>FAQ</title>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#FF0000" vlink="#FF0000" alink="#FFFFFF">
+
+<p><em><strong>Is it Y2K compliant?</strong></em></p>
+
+<p><small>The original 3CServer (on which 3CDaemon is based) was written as a piece of *freeware* by myself. It is not
+an &quot;officially&quot; supported 3Com product - It has no 3C Number, does not appear on
+any product list. I just saw a need and wrote the software to fill it. I am an employee of
+3Com, but wrote the server in my spare time.</small></p>
+
+<p><small>Then, 3Com Network Management Division (NMD) saw the server, and liked it.
+Seeing an opportunity for wider distribution of the program, I gave NMD the code. They
+produced a slightly modified version (different icons, other cosmetics, the core code
+remains the same) based on 3CServer 1.1.007. This became part of the NetBuilder II Remote
+Upgrade Utilities Version 11.0. (RUU). 3CServer will also be part of Transcend NT Version
+1.1.</small></p>
+
+<p><em><strong>So, is 3CServer/3CDaemon Y2K compliant?</strong></em></p>
+
+<p><small>All of the functions which use a date including a year, use the Microsoft
+function CTime, which is accurate up to the year 2038. I have done some testing. What I
+did was go through the code and looked for every instance where I used a date with
+includes a year designation. In every case, dates which are post-2000 were rendered
+correctly. So, as far as I can determine, 3CServer is Y2K compliant. However, this is me
+speaking as an individual (and the developer of the freeware code), not as a
+representative of 3Com. </small></p>
+
+<p><small>3CServer will be included as part of the Transcend NT 1.1 Y2K compliance tests.</small></p>
+
+<p><small>So, even though 3CDaemon already passed all my tests for Y2K compliance, it is
+usually considered bad practice for the person who developed the code to also test and
+certify it. If you wish a version that has been independantly tested, consider Transcend
+NT 1.1.</small></p>
+
+<p><small>In either case, 3CDaemon never does any computations where it compares one date
+against another. Thus, it's difficult to imagine what Y2K issues it could have...</small></p>
+
+<p><em><strong>Differences from Berkeley TFTP Daemon</strong></em><small><br>
+<br>
+3CDaemon is designed to be as user-friendly as possible. While the Berkeley Tftp daemon
+concentrates on security, 3CDaemon concentrates on ease of use. The main differences are: </small>
+
+<ul>
+  <li><small>3CDaemon does not require that the destination file already exist on the server
+    before allowing a transfer to occur.</small></li>
+  <li><small>3CDaemon will allow incoming files to overwrite files which already exist on the
+    server (This is a user-selectable option.)</small></li>
+  <li><small>3CDaemon will allow the creation of directories, if the client sends a directory
+    name with the file request. ( This is a user-selectable option.)</small></li>
+  <li><small>Files can also be retrieved from subdirectories of the Upload/Download directory</small></li>
+  <li><small>3CDaemon is more verbose when errors occur. The TFTP specification (RFC 1350)
+    defines only 8 error messages which can be transmitted back to the client when a problem
+    occurs. However, ERROR 0 is UNDEFINED ERROR CODE, and instructs the user to SEE ERROR
+    MESSAGE (IF ANY). 3CDaemon takes advantage of this, and returns ERROR 0 for most problems,
+    with a verbose description of what went wrong.</small></li>
+</ul>
+
+<p><em><strong>Limitations:</strong></em></p>
+
+<p><small>The following FTP commands are not implemented, just because they didn&#146;t
+seem applicable: ACCT, SMNT, STOU, ALLO, SITE</small></p>
+
+<p><small>In addition, some other commands are implemented but with some limitations:</small></p>
+
+<p><small>LIST and NLST do not support switches. Any switches are parsed off the command
+line, and a standard file listing is returned.</small></p>
+
+<p><small>The TYPE command will accept ASCII or BINARY. EBCDIC is not supported.<br>
+The MODE command only supports type &#147;Stream&#148;<br>
+The STRU command only supports type &#147;File&#148;</small></p>
+
+<p><small>The Syslog server, unlike some syslogd implementations, does not apply a host
+name to received messages. Messages are always logged as dotted decimal IP addresses. This
+would be easy enough to implement, but I am concerned about the latency problems in doing
+a host lookup for every message (especially if the messages are coming fast and furious!)</small></p>
+
+<p><em><strong>Where do I report bugs/request enhancements?</strong></em></p>
+
+<p><small>Email <a href="mailto:dan_gill@3com.com">dan_gill@3com.com</a></small></p>
+</body>
+</html>

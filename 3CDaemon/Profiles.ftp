@@ -1,0 +1,11 @@
+[anonymous]
+Password = NoPassword
+CanLogin = 1
+CanUpload = 1
+CanDownload = 1
+CanOverwrite = 1
+CanDelete = 1
+CanRename = 1
+CanRmdir = 1
+CanMkDir = 1
+UserDir = D:\AutoBackup

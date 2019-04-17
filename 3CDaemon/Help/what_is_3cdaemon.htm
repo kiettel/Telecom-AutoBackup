@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="Microsoft Border" content="none">
+<title>What is 3CDaemon?</title>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF">
+
+<p><em><strong>Why another TFTP Server? Doesn't 3Com already supply one?</strong></em></p>
+
+<p>In the beginning, there was 3CTftpd, which was a small TFTP Server program I wrote so
+that 3Com customers could upgrade their 3Com equipment.</p>
+
+<p>3CTftpd begat 3CServer, which was a more full-featured TFTP and FTP server I wrote.
+This eventually became part of 3Com's Transcend Network Management product.</p>
+
+<p>However, it soon became apparent that our customers were using 3CServer for a lot of
+other things, in addition to upgrading their 3Com boxes. I was getting a number of
+enhancement requests. In order to accommodate these requests, I took another look at the
+code, and tried to implement as many as I could.</p>
+
+<p>There was a problem, though. 3CServer was now part of a different product. I spoke with
+our Network Management folks, and we agreed that we didn't want the two programs getting
+in each other's way. Therefore, I decided to rename my newest incarnation to 3CDaemon.</p>
+
+<p><em><strong>I'm confused! Which one should I use?</strong></em></p>
+
+<p>It's really a matter of personal choice. If 3CServer fulfills your needs, then by all
+means, continue using it. If you want or need some of the extra functionality provided by
+3CDaemon, then use it instead. Either one will work for upgrading 3Com products, since
+they are adapted from the same code base. Since both are freeware, I don't make a penny
+off of them either way :)</p>
+
+<p><em><strong>So, what's new in this 3CDaemon thing?</strong></em> 
+
+<ul>
+  <li>New interface. Lot more extensible, so that I can add sub-programs more easily.</li>
+</ul>
+
+<ul>
+  <li>TFTP Server:</li>
+  <ul>
+    <li>Support for RFC 1782, 1783 and 1784. Block size, timeout and transfer-size negotiation. </li>
+    <li>Faster. See speed comparison chart below. </li>
+    <li>Prints IP address(es) on which it is listening. </li>
+  </ul>
+</ul>
+
+<ul>
+  <li>FTP Server:</li>
+  <ul>
+    <li>Supports PASSIVE transfer.</li>
+    <li>Supports Netscape/IE4 browsing</li>
+    <li>Supports 32 char passwords.</li>
+    <li>Passwords are MD5 hashed. This should provide adequate password security, yet at the
+      same time still be exportable.</li>
+    <li>Prints IP address(es) on which it is listening.</li>
+  </ul>
+</ul>
+
+<ul>
+  <li>Syslog Server:</li>
+  <ul>
+    <li>Added Syslog functionality. </li>
+    <li>Logs all syslog messages received.</li>
+    <li>Allows filtering/restriction of syslog messages by IP Address.</li>
+    <li>Allows logging into via message priority, message facility or IP address.</li>
+    <li>Allows viewing of the log files while active, plus copy to clipboard or print</li>
+    <li>Produces standard ASCII text files, suitable for including in emails or faxing.</li>
+    <li>Prints IP address(es) on which it is listening.</li>
+  </ul>
+</ul>
+
+<ul>
+  <li>TFTP Client:</li>
+  <ul>
+    <li>Support for RFC 1782, 1783 and 1784. Block size, timeout and transfer-size negotiation.</li>
+    <li>Stores addresses of frequently accessed hosts</li>
+    <li>Supports multiple file transfer, or directory transfer</li>
+  </ul>
+</ul>
+
+<p>&nbsp; 
+
+<ul>
+  <li>Lots and lots of other little fixes and enhancements. Play with it. I'll be adding more
+    as time goes by.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Totally Unscientific Speed comparison:</p>
+
+<p>(i.e. These are numbers I got transferring the same file between two PCs on the same
+hub. Your mileage will vary...)</p>
+
+<table border="2" cellpadding="2" width="78%">
+  <tr>
+    <td width="52%">&nbsp;</td>
+    <td width="34%">Get 13.3MB File</td>
+    <td width="49%">Put 13.3MB file</td>
+  </tr>
+  <tr>
+    <td width="52%">3CServer TFTP</td>
+    <td width="34%">75.5 secs</td>
+    <td width="49%">77.1 secs</td>
+  </tr>
+  <tr>
+    <td width="52%">3CDaemon TFTP</td>
+    <td width="34%">48.1 secs</td>
+    <td width="49%">46.4 secs</td>
+  </tr>
+  <tr>
+    <td width="52%">3CDaemon TFTP with negotiated 2048 blocksize</td>
+    <td width="34%">16 secs</td>
+    <td width="49%">15 secs</td>
+  </tr>
+  <tr>
+    <td width="52%">3CServer FTP</td>
+    <td width="34%">38.9 secs</td>
+    <td width="49%">57.6 secs</td>
+  </tr>
+  <tr>
+    <td width="52%">3CDaemon FTP</td>
+    <td width="34%">15.4 secs </td>
+    <td width="49%">16.1 secs</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+START /B jre\bin\javaw -cp AutoBackup.jar com.kiettel.autobackup.Main

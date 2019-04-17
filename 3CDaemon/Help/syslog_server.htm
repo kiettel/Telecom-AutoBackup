@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Syslog Server</title>
+
+<meta name="Microsoft Border" content="none"></head>
+
+<body bgcolor="#000000" text="#FFFFFF">
+
+<p>The Syslog Server in 3CDaemon provides the following features: 
+
+<ul>
+  <li>BSD-unix style syslogd functionality. (No RFC here - its a unix thing...) </li>
+  <li>Allows filtering/restriction of syslog messages by IP Address.</li>
+  <li>Allows logging into via message priority, message facility or IP address.</li>
+  <li>Allows viewing of the log files while active, plus copy to clipboard or print</li>
+  <li>Produces standard ASCII text files, suitable for including in emails or faxing.</li>
+  <li>Prints IP address(es) on which it is listening.</li>
+</ul>
+
+<p>This is the configuration screen and what each value means:</p>
+
+<p><img src="images/syslogcfg.jpg" alt="syslogcfg.jpg (15880 bytes)" WIDTH="641" HEIGHT="506"></p>
+
+<table border="3" cellpadding="3" cellspacing="3" width="100%">
+  <tr>
+    <td width="50%" valign="top"><small>Directory for syslog files</small></td>
+    <td width="50%"><small>This will be the directory in which the syslog files will be
+    written. Be sure that the directory is writeable, and has enough space for the files.</small></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><small>Who can log to this server</small></td>
+    <td width="50%"><small>You have two choices here: &quot;Anyone&quot; or &quot;Just the
+    addresses I specify&quot;. If set for &quot;Anyone&quot;, then the Syslog Server will
+    accept and record every syslog message it gets. If set for &quot;Just the addresses I
+    specify&quot; then the Syslog Server will only accept and record messages from specific
+    addresses.</small></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><small>IP Addresses</small></td>
+    <td width="50%"><ol>
+      <li><small>Here is where you specify the addresses from which the Syslog Server will accept
+        messages. In the dialog box, double-click to add or edit your IP address entries, the
+        click &quot;Save Changes&quot;.&nbsp; This parameter has no effect, unless you select
+        &quot;Just the addresses I specify&quot; under &quot;Who can log to this server&quot;.</small></li>
+      <li><small>Notes on adding addresses: </small></li>
+      <li><small>Only IP addresses are accepted, not host names. (The latency of doing a host-name
+        lookup every time the server receives a message is too great.)</small></li>
+      <li><small>IP addresses should be specified in dotted decimal, and should NOT contain any
+        leading zeroes. That is, enter the address as, (for example): &quot;10.4.5.1&quot;, NOT
+        &quot;010.004.005.001&quot;.</small></li>
+    </ol>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><small>Log messages to:</small></td>
+    <td width="50%"><small>You have 4 choices here:</small><ol>
+      <li><small>One file: syslog.log. This is the easiest choice. All the received messages will
+        be sent into a single file.</small></li>
+      <li><small>Log by priority: Each syslog message received will have a priority assigned to it
+        by the originator. These priorities are:</small><ul>
+          <li><small>alert</small></li>
+          <li><small>critical</small></li>
+          <li><small>debug</small></li>
+          <li><small>emergency</small></li>
+          <li><small>error</small></li>
+          <li><small>info</small></li>
+          <li><small>none</small></li>
+          <li><small>notice</small></li>
+          <li><small>panic</small></li>
+          <li><small>warning</small></li>
+        </ul>
+        <p><small>A corresponding &quot;.log&quot; file will be created for each priority level.</small></p>
+      </li>
+      <li><small>Log by facility: Each syslog message received will have a facility assigned to it
+        by the originator. These facilities are:</small><ul>
+          <li><small>auth</small></li>
+          <li><small>authpriv</small></li>
+          <li><small>cron</small></li>
+          <li><small>daemon</small></li>
+          <li><small>ftp</small></li>
+          <li><small>kern</small></li>
+          <li><small>lpr</small></li>
+          <li><small>mail</small></li>
+          <li><small>mark</small></li>
+          <li><small>news</small></li>
+          <li><small>security</small></li>
+          <li><small>syslog</small></li>
+          <li><small>user</small></li>
+          <li><small>uucp</small></li>
+          <li><small>local0 thru local7</small></li>
+        </ul>
+        <p><small>Not a lot of these will be relevant for logging from routers, but are included
+        for completeness. A corresponding &quot;.log&quot; file will be created for each facility
+        level.</small></p>
+      </li>
+      <li><small>Log by IP address: If you have set up &quot;Who can log to this server&quot; to
+        be &quot;Just the addresses I specify&quot; and you have provided a list of IP addresses,
+        a corresponding log file will be created for each remote syslog client. For example:
+        &quot;10_4_5_1.log&quot;</small></li>
+    </ol>
+    <p>&nbsp;</p>
+    <p>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

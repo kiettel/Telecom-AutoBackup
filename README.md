@@ -1,19 +1,3 @@
-﻿DONATIONS:
-
-Developing softwares was a lot of fun, it also consumed many months of my life. It actually continues to cost me a significant amount of money to host the http://microcode.vn
-
-If you like my softs, you can make a donation. Your donation will help me to continue my projects development.
-
-PayPal:
-
-  http://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X827C3T4PJLQA
-  http://www.paypal.me/kiettel
-If you living in Viet Nam, you can make donates via bank transfer:
-
-+BIDV: Account No: 63610000096960, account name: Trương Tuấn Kiệt.
-
-+ACB: Account No: 4214945807039367, account name: Trương Tuấn Kiệt.
-
 AUTO BACKUP TELECOM DEVICE'S CONFIGURATIONS.
 
 Author: Truong Tuan Kiet (Kiettel)

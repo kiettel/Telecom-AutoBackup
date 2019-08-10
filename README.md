@@ -3,7 +3,7 @@ AUTO BACKUP TELECOM DEVICE'S CONFIGURATIONS.
 Author: Truong Tuan Kiet (Kiettel)
 
 Version: 8.0.0.0
-Website: http://microcode.vn, http://kiettel.com
+Website: http://kiettel.com
 
 Email: kiettel@gmail.com, kiettel@yahoo.com
 
